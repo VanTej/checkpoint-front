@@ -3,6 +3,20 @@ import { useParams } from "react-router-dom";
 import { CountryType } from "../types";
 import { GET_COUNTRY_DETAILS } from "../graphql/queries";
 import { useState } from "react";
+import { Card, Row } from "antd";
+
+const gridStyle: React.CSSProperties = {
+    width: '25%',
+    textAlign: 'center',
+    margin: "2rem",
+  };
+
+const cardStyle: React.CSSProperties = {
+    marginTop:"10vh",
+    backgroundColor: "#b4caf7",
+    justifyContent: "center",
+    border: "none",
+  };
 
 const CountryDetails = () => {
     const { codeCountry } = useParams();
@@ -13,17 +27,17 @@ const CountryDetails = () => {
         variables: {code: codeCountry},
         onCompleted: (country) => {
             setCountry(country.country);
-            console.log(country)
         },
         });
     return (
         <div>
-            <h1>Détails du pays {country?.name}</h1>
-            <ul>
-                <li>{country?.capital}</li>
-                <li>{country?.currency}</li>
-                <li >{country?.emoji}</li>
-            </ul>
+            <h1>{country?.name} {country?.emoji}</h1>
+            <Card style={cardStyle}>
+                <Row justify="center">
+                    <Card.Grid style={gridStyle}>Capital : {country?.capital}</Card.Grid>
+                    <Card.Grid style={gridStyle}>Currency: {country?.currency}</Card.Grid>
+                </Row>
+            </Card>
         </div>
     )
 
