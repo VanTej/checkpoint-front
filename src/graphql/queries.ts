@@ -12,6 +12,7 @@ const GET_ALL_CONTINENTS = gql`
 const GET_ALL_COUNTRIES_BY_CONTINENT = gql`
     query Query ($code: ID!) {
         continent (code: $code) {
+            name
             countries {
                 name
                 code
@@ -26,7 +27,8 @@ const GET_COUNTRY_DETAILS = gql`
         name
         capital
         currency
-        languages {name}
+        emoji
+        }
     }
 `;
 

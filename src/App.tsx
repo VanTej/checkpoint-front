@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -14,9 +15,9 @@ function App() {
     <Router>
       <div className="App">
         <Routes>
-          <Route path="/continents" element={<Continents />} />
-          <Route path="/countries" element={<Countries />} />
-          <Route path="/countryDetails" element={<CountryDetails />} />
+          <Route path="/" element={<Continents />} />
+          <Route path="/countries/:codeContinent" element={<Countries />} />
+          <Route path="/countryDetails/:codeCountry" element={<CountryDetails />} />
         </Routes>
       </div>
     </Router>
