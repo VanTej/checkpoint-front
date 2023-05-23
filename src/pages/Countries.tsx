@@ -7,29 +7,27 @@ import { Card, Input, Row, Space } from "antd";
 import { SearchOutlined } from '@ant-design/icons';
 
 const containerStyle: React.CSSProperties = {
-    backgroundColor: "#b4caf7",
     height: "100vh",
     width: "100vw",
   };
 
-const gridStyle: React.CSSProperties = {
+  const gridStyle: React.CSSProperties = {
     width: '25%',
+    backgroundColor: "#b4caf7",
     textAlign: 'center',
-    margin: "2rem",
+    margin: "1rem",
   };
 
 const cardStyle: React.CSSProperties = {
     marginTop:"10vh",
-    backgroundColor: "#b4caf7",
-    paddingInline: "10vw",
-    justifyContent: "center",
+    paddingInline: "10%",
     border: "none",
   };
 
-  const linkStyle: React.CSSProperties = {
-      color: "#030030",
-      textDecoration: "none",
-    };
+const linkStyle: React.CSSProperties = {
+    color: "#030030",
+    textDecoration: "none",
+  };
 
 const Countries = () => {
     const { codeContinent } = useParams();

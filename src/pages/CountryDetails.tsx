@@ -13,7 +13,6 @@ const gridStyle: React.CSSProperties = {
 
 const cardStyle: React.CSSProperties = {
     marginTop:"10vh",
-    backgroundColor: "#b4caf7",
     justifyContent: "center",
     border: "none",
   };
